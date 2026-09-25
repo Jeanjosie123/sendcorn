@@ -1,55 +1,157 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07090d"><title>XAUX Beta 0.2x</title>
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07090d"><title>XAUX Beta 0.8x</title>
 <style>
 :root{--bg:#07090d;--card:#0d1219;--line:#202936;--text:#f5f6f8;--muted:#8490a2;--gold:#e8c35c;--green:#4ad895;--red:#ff6577}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#1c2533,#080b10 42%,#06080b);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.w{max-width:720px;margin:auto;padding:17px 15px 50px}.top,.flex{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px}.au{width:50px;height:43px;border:1px solid #504424;background:#17150e;border-radius:14px;display:grid;place-items:center;color:var(--gold);font-weight:800}.sub,.muted{font-size:10px;color:var(--muted)}.sub{letter-spacing:.12em;margin-top:3px}.on{font-size:10px;color:#72dfa8;border:1px solid #244b39;background:#0b1b14;padding:7px 9px;border-radius:99px}.hero,.card{border:1px solid var(--line);background:linear-gradient(145deg,#111720ed,#0a0f15f5);border-radius:21px}.hero{margin-top:16px;padding:21px;box-shadow:0 18px 55px #0007}.price{font-size:41px;font-weight:760;letter-spacing:-.045em;margin:12px 0 2px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.card{padding:15px}.full{grid-column:1/-1}.lab{font-size:10px;color:var(--muted);letter-spacing:.09em;margin-bottom:8px}.val{font-size:17px;font-weight:720}.green{color:var(--green)}.levels{display:grid;gap:8px}.level{display:flex;align-items:center;justify-content:space-between;padding:11px 12px;border-radius:13px;background:#090d13;border:1px solid #1c2531}.level .l{display:flex;align-items:center;gap:9px}.dot{width:7px;height:7px;border-radius:50%}.bull{background:var(--green);box-shadow:0 0 10px #4ad89577}.bear{background:var(--red);box-shadow:0 0 10px #ff657777}.level b{font-size:14px}.tag{font-size:9px;color:var(--muted)}.form{margin-top:10px}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.field{margin-bottom:10px}.field label{display:block;font-size:10px;color:var(--muted);margin:0 0 6px 2px}.input{width:100%;border:1px solid var(--line);background:#080c12;color:#fff;border-radius:13px;padding:13px;font-size:14px;outline:none}.buttons{display:grid;grid-template-columns:1fr .7fr;gap:8px}.btn{border:0;border-radius:13px;padding:14px;font-weight:800}.save{background:linear-gradient(135deg,#f1d173,#c79a34);color:#171208}.demo{background:#171e28;color:#e7ebf1;border:1px solid #273241}.logic{font-size:11px;line-height:1.65;color:#aab3bf}.logic b{color:#fff}.event{border-left:2px solid #3b4654;padding-left:10px;margin-top:10px}.event b{font-size:12px}.event div{font-size:10px;color:var(--muted);margin-top:3px}.notice{font-size:10px;line-height:1.5;color:#c8b978;background:#17150e;border:1px solid #4b4125;padding:10px 11px;border-radius:12px;margin-top:10px}
-.watchHead{width:100%;padding:0;background:none;border:0;color:inherit;display:flex;align-items:center;justify-content:space-between;text-align:left;cursor:pointer}.watchHead .tag{display:block;margin-top:4px}.chev{font-size:18px;color:var(--muted);transition:transform .22s ease}.collapse{display:grid;grid-template-rows:0fr;opacity:.55;transition:grid-template-rows .28s ease,opacity .22s ease,margin-top .28s ease;margin-top:0}.collapse>.levels{overflow:hidden}.collapse.open{grid-template-rows:1fr;opacity:1;margin-top:10px}.watched.closed .chev{transform:rotate(180deg)}</style></head><body><main class="w">
-<header class="top"><div class="brand"><div class="au">XAU</div><div><b>XAUX Beta 0.2x</b><div class="sub">M5 • FIRST IMB MONITOR</div></div></div><div class="on" id="online">● READY</div></header>
+.watchHead{width:100%;padding:0;background:none;border:0;color:inherit;display:flex;align-items:center;justify-content:space-between;text-align:left;cursor:pointer}.watchHead .tag{display:block;margin-top:4px}.chev{font-size:18px;color:var(--muted);transition:transform .22s ease}.collapse{display:grid;grid-template-rows:0fr;opacity:.55;transition:grid-template-rows .28s ease,opacity .22s ease,margin-top .28s ease;margin-top:0}.collapse>.levels{overflow:hidden}.collapse.open{grid-template-rows:1fr;opacity:1;margin-top:10px}.watched.closed .chev{transform:rotate(180deg)}.settingsDrawer{margin-top:10px;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}.settingsDrawer>summary{list-style:none;display:flex;align-items:center;gap:10px;padding:14px 16px;cursor:pointer;font-size:12px;font-weight:800;letter-spacing:.08em}.settingsDrawer>summary::-webkit-details-marker{display:none}.drawerArrow{margin-left:auto;font-size:18px}.drawerBody{padding:0 10px 10px}.drawerBody>.card{margin:0;border:0;box-shadow:none;background:transparent;padding:6px}
+:root{--bg:#070604!important;--card:rgba(18,15,8,.78)!important;--line:rgba(212,175,55,.22)!important;--text:#f7e7aa!important;--muted:#aa9560!important;--accent:#d4af37!important}
+body{background:radial-gradient(circle at 85% 5%,rgba(212,175,55,.14),transparent 28%),linear-gradient(145deg,#030303 0%,#0d0a04 48%,#171005 100%)!important;color:var(--text)!important;min-height:100vh}
+.card,.modalPanel{background:linear-gradient(145deg,rgba(24,19,8,.92),rgba(8,7,5,.96))!important;border-color:rgba(212,175,55,.22)!important}
+button.primary{background:linear-gradient(135deg,#8b6814,#e2c15a)!important;color:#090704!important}
+.roundMenu{position:fixed;right:18px;width:52px;height:52px;border-radius:50%;z-index:40;border:1px solid rgba(226,193,90,.5);background:linear-gradient(145deg,#1d1607,#080704);box-shadow:0 10px 28px rgba(0,0,0,.45),inset 0 0 18px rgba(212,175,55,.08);display:grid;place-items:center;color:#e2c15a}
+.roundMenu svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.notifyBtn{bottom:88px}.settingsBtn{bottom:26px}.badge{position:absolute;right:-2px;top:-3px;min-width:18px;height:18px;padding:0 4px;border-radius:10px;background:#d4af37;color:#090704;font-size:10px;font-weight:900;display:grid;place-items:center}
+.modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.42);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:.22s}.modal.show{opacity:1;visibility:visible}.modalPanel{width:min(92vw,480px);max-height:78vh;overflow:auto;border:1px solid rgba(226,193,90,.3);border-radius:22px;padding:18px;box-shadow:0 24px 80px rgba(0,0,0,.65);transform:translateY(14px) scale(.98);transition:.22s}.modal.show .modalPanel{transform:none}.modalHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.circleClose{width:36px;height:36px;border-radius:50%;border:1px solid rgba(212,175,55,.25);background:#0c0904;color:#e2c15a;font-size:24px;line-height:1}.settingsDrawer{display:none!important}
+
+/* XAUX 0.5 — Obsidian Gold */
+:root{--bg:#020202!important;--card:#070706!important;--line:rgba(201,160,55,.28)!important;--text:#f3df9b!important;--muted:#8d7a48!important;--accent:#c9a037!important}
+html,body{background:#020202!important}
+body{background:radial-gradient(circle at 50% -15%,rgba(183,139,31,.075),transparent 35%),#020202!important}
+.card,.modalPanel{background:linear-gradient(145deg,rgba(9,9,8,.985),rgba(3,3,3,.995))!important;border-color:rgba(201,160,55,.25)!important;box-shadow:inset 0 1px rgba(255,220,120,.025),0 12px 36px rgba(0,0,0,.34)!important}
+.price,.hero,.priceCard{position:relative;overflow:hidden;background:#030303!important}
+.price:before,.hero:before,.priceCard:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.24;background-image:linear-gradient(rgba(201,160,55,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(201,160,55,.07) 1px,transparent 1px),radial-gradient(circle at 78% 22%,rgba(201,160,55,.13),transparent 25%);background-size:24px 24px,24px 24px,100% 100%;mask-image:linear-gradient(120deg,transparent 0%,#000 40%,#000 100%);-webkit-mask-image:linear-gradient(120deg,transparent 0%,#000 40%,#000 100%)}
+.price>* ,.hero>* ,.priceCard>*{position:relative;z-index:1}
+.roundMenu{background:radial-gradient(circle at 35% 25%,#171208,#050504 70%)!important;border-color:rgba(201,160,55,.42)!important}
+.calendarBtn{bottom:150px}
+.calendarGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.calDow{text-align:center;font-size:10px;color:var(--muted);padding:4px 0;font-weight:800}.calDay{min-height:48px;border:1px solid rgba(201,160,55,.13);border-radius:11px;padding:6px;background:#050504;color:#a8955c;font-size:11px}.calDay.empty{opacity:.18}.calDay.today{border-color:rgba(201,160,55,.62);color:#f3df9b}.calCount{display:block;margin-top:5px;font-size:12px;font-weight:900;color:#d9b84e}.calCount.zero{color:#554a2d;font-weight:600}.calNav{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.calNav button{width:34px;height:34px;border-radius:50%;border:1px solid rgba(201,160,55,.22);background:#050504;color:#d9b84e}.calTitle{font-weight:900;color:#f3df9b}.calSummary{margin-top:12px;padding:11px;border:1px solid rgba(201,160,55,.14);border-radius:12px;background:#050504;color:var(--muted);font-size:12px}
+
+.goldLogo svg{width:38px;height:38px;display:block;filter:drop-shadow(0 4px 10px rgba(201,160,55,.18))}
+.liveFeedCard{padding-bottom:8px!important}.liveHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.liveState{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:900;color:#c9a037;letter-spacing:.12em}.liveState span{width:7px;height:7px;border-radius:50%;background:#d6b449;box-shadow:0 0 10px rgba(214,180,73,.65)}
+.liveFeed{max-height:310px;overflow:auto}.feedItem{padding:12px 2px;border-top:1px solid rgba(201,160,55,.12)}.feedItem:first-child{border-top:0}.feedTop{display:flex;align-items:center;justify-content:space-between;gap:10px}.feedTitle{font-size:12px;font-weight:900;color:#f3df9b}.feedTime{font-size:10px;color:#786a43;white-space:nowrap}.feedMeta{margin-top:7px;display:grid;grid-template-columns:1fr 1fr;gap:6px}.feedMeta div{padding:8px;border-radius:10px;background:#040403;border:1px solid rgba(201,160,55,.09)}.feedMeta small{display:block;color:#776944;font-size:9px;letter-spacing:.08em;margin-bottom:3px}.feedMeta b{font-size:12px;color:#d8bb61}.feedBull .feedTitle:before{content:"●";margin-right:7px;color:#55d89b}.feedBear .feedTitle:before{content:"●";margin-right:7px;color:#d16b64}
+
+/* Gold price reflection — only the live XAU price */
+.price .val,.hero .val,.priceCard .val,#price{
+ position:relative;
+ display:inline-block;
+ color:#e9c95f!important;
+ background:linear-gradient(105deg,#8b6516 0%,#d3a936 24%,#fff2ad 42%,#c99a27 53%,#f7dc7a 72%,#8b6516 100%);
+ background-size:240% 100%;
+ -webkit-background-clip:text;
+ background-clip:text;
+ -webkit-text-fill-color:transparent;
+ animation:xauxGoldSweep 3.8s ease-in-out infinite;
+ filter:drop-shadow(0 2px 9px rgba(211,169,54,.14));
+}
+@keyframes xauxGoldSweep{
+ 0%,18%{background-position:110% 50%;filter:drop-shadow(0 2px 8px rgba(211,169,54,.10))}
+ 48%{background-position:42% 50%;filter:drop-shadow(0 2px 14px rgba(255,220,112,.22))}
+ 78%,100%{background-position:-40% 50%;filter:drop-shadow(0 2px 8px rgba(211,169,54,.10))}
+}
+@media (prefers-reduced-motion:reduce){.price .val,.hero .val,.priceCard .val,#price{animation:none}}
+
+/* 0.8 UI refinements */
+.circleClose{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;display:grid!important;place-items:center!important;line-height:1!important;color:#e2c15a!important;font-size:30px!important}
+.calDay.today{border-color:rgba(255,255,255,.92)!important;color:#fff!important;box-shadow:0 0 8px rgba(255,255,255,.65),0 0 22px rgba(255,255,255,.22),inset 0 0 12px rgba(255,255,255,.07)!important;text-shadow:0 0 7px rgba(255,255,255,.55)}
+/* Animated light orbit around the live-price card */
+.price,.hero,.priceCard{isolation:isolate}
+.price:after,.hero:after,.priceCard:after{
+ content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;pointer-events:none;z-index:0;
+ background:conic-gradient(from var(--xaux-angle),transparent 0deg,transparent 275deg,rgba(255,245,202,.12) 305deg,#fff2ad 330deg,#c99a27 346deg,transparent 360deg);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+ -webkit-mask-composite:xor;mask-composite:exclude;
+ filter:drop-shadow(0 0 7px rgba(231,197,93,.35));
+ animation:xauxBorderOrbit 4.8s linear infinite;
+}
+@property --xaux-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes xauxBorderOrbit{to{--xaux-angle:360deg}}
+@media (prefers-reduced-motion:reduce){.price:after,.hero:after,.priceCard:after{animation:none}}
+</style></head><body><main class="w">
+<header class="top"><div class="brand"><div class="au goldLogo" aria-label="Gold">
+<svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+ <defs><linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0a6"/><stop offset=".38" stop-color="#d7aa36"/><stop offset="1" stop-color="#76500d"/></linearGradient></defs>
+ <path d="M10 39 17 25h30l7 14-7 10H17Z" fill="url(#goldBar)" stroke="#f0d16b" stroke-width="1.4"/>
+ <path d="M17 25 24 16h18l5 9M17 25h30M23 39l5-14M41 39l-5-14" fill="none" stroke="#6e4c0d" stroke-width="1.3" stroke-linejoin="round"/>
+ <path d="M17 49h30" stroke="#f2d36d" stroke-width="1.2" opacity=".55"/>
+</svg></div><div><b>XAUX Beta 0.8x</b><div class="sub">M5 • IMBALANCE MONITOR</div></div></div><div class="on" id="online">● READY</div></header>
 <section class="hero"><div class="flex"><b style="font-size:12px">XAU/USD</b><span class="muted">M5</span></div><div class="price" id="price">—</div><div class="muted" id="stamp">Connect Worker to begin</div></section>
-<section class="grid"><div class="card"><div class="lab">FIRST IMB WATCHED</div><div class="val green" id="count">0 LEVELS</div></div><div class="card"><div class="lab">MODE</div><div class="val">FIRST IMB</div></div><div class="card full"><div class="lab">LAST CLOSED M5</div><div class="val" id="candle">—</div></div></section>
-<section class="card watched" style="margin-top:10px">
-<button id="levelsToggle" class="watchHead" type="button" aria-expanded="true">
-  <div><div class="lab" style="margin:0">WATCHED IMB OPEN LEVELS</div><span class="tag">AUTO DISCOVERED</span></div>
-  <span id="levelsChevron" class="chev">⌃</span>
+<section class="grid"><div class="card"><div class="lab">IMBALANCE WATCHED</div><div class="val green" id="count">0 LEVELS</div></div><div class="card"><div class="lab">MODE</div><div class="val">IMBALANCE</div></div><div class="card full"><div class="lab">LAST CLOSED M5</div><div class="val" id="candle">—</div></div></section>
+<button id="calendarOpen" class="roundMenu calendarBtn" type="button" aria-label="Alert calendar">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v3M19 3v3M4 8h16M5 5h14a2 2 0 0 1 2 2v13H3V7a2 2 0 0 1 2-2Z"/><path d="M7 12h2M11 12h2M15 12h2M7 16h2M11 16h2M15 16h2"/></svg>
 </button>
-<div id="levelsBody" class="collapse open"><div class="levels" id="levels"><div class="muted">No IMB levels loaded yet.</div></div></div>
-</section>
-<section class="card form"><div class="lab">DETECTOR SETTINGS</div><div class="row"><div class="field"><label>MIN IMB GAP (USD)</label><input id="gap" class="input" value=".15" inputmode="decimal"></div><div class="field"><label>REJECTION TOLERANCE</label><input id="tol" class="input" value=".35" inputmode="decimal"></div></div><div class="field"><label>MIN DISPLACEMENT (%)</label><input id="disp" class="input" value=".06" inputmode="decimal"><div class="muted" style="margin:6px 2px 0">First IMB ต้องส่งราคาออกจาก Origin Open อย่างน้อยค่านี้ก่อนถูก Confirm</div></div><div class="field"><label>WORKER URL</label><input id="worker" class="input" placeholder="https://...workers.dev"></div><div class="field"><label>ADMIN KEY</label><input id="key" type="password" class="input" placeholder="รหัสที่คุณตั้งเอง"></div><div class="buttons"><button id="save" class="btn save">SAVE & ARM</button><button id="demo" class="btn demo">SEND DEMO</button></div><div class="notice">ระบบเก็บเฉพาะ First opposing IMB → Origin Open → ต้องมี displacement ตามเกณฑ์ → รอราคากลับมา Retest / Rejection</div></section>
-<section class="card" style="margin-top:10px"><div class="lab">XAUX FIRST IMB LOGIC</div><div class="logic">
-<b>1.</b> หา IMB/FVG บน M5 ที่ปิดครบแล้ว<br>
-<b>2.</b> เมื่อทิศ IMB เปลี่ยน เก็บเฉพาะ <b>IMB แรกของฝั่งใหม่</b> เป็น Origin Candidate<br>
-<b>3.</b> จำ <b>Open ของ Origin Candle</b> และต้องส่งราคาออกอย่างน้อย MIN DISPLACEMENT<br>
-<b>4.</b> IMB ฝั่งเดียวกันที่เกิดตามทางจะไม่ถูกใช้แทน First IMB<br>
-<b>5.</b> เมื่อราคาย้อนกลับ Origin Open และแท่ง M5 Reject กลับ → แจ้ง Discord
-</div></section>
-<section class="card form" style="margin-top:10px"><div class="lab">RR & RISK CALCULATOR</div>
-<div class="row"><div class="field"><label>ACCOUNT / BALANCE ($)</label><input id="bal" class="input" value="1000" inputmode="decimal"></div><div class="field"><label>RISK (%)</label><input id="riskPct" class="input" value="1" inputmode="decimal"></div></div>
-<div class="row"><div class="field"><label>ENTRY</label><input id="entry" class="input" placeholder="4268.50" inputmode="decimal"></div><div class="field"><label>STOP LOSS</label><input id="sl" class="input" placeholder="4265.50" inputmode="decimal"></div></div>
-<div class="row"><div class="field"><label>TAKE PROFIT</label><input id="tp" class="input" placeholder="4274.50" inputmode="decimal"></div><div class="field"><label>LOT SIZE</label><input id="lot" class="input" value=".01" inputmode="decimal"></div></div>
-<div class="field"><label>CONTRACT SIZE (oz / 1 lot)</label><input id="contract" class="input" value="100" inputmode="decimal"><div class="muted" style="margin:6px 2px 0">ค่าเริ่มต้น 100 oz/lot — เช็ก Contract Specification ของโบรกเกอร์คุณก่อนใช้จริง</div></div>
-<div class="grid" style="margin-top:4px"><div class="card"><div class="lab">RISK BUDGET</div><div class="val" id="riskBudget">$—</div></div><div class="card"><div class="lab">RISK @ LOT</div><div class="val" id="riskLot">$—</div></div><div class="card"><div class="lab">RR</div><div class="val" id="rr">—</div></div><div class="card"><div class="lab">LOT FOR RISK</div><div class="val" id="lotForRisk">—</div></div></div>
-<div class="notice">Calculator เท่านั้น ไม่ได้เปิดออเดอร์ให้คุณ: Risk @ Lot = ระยะ Entry↔SL × Lot × Contract Size และ RR = ระยะ Entry↔TP ÷ ระยะ Entry↔SL</div>
-</section><section class="card" style="margin-top:10px"><div class="lab">REJECTION HISTORY</div><div id="events"><div class="event"><b>Waiting</b><div>สัญญาณจะขึ้นตรงนี้หลังตรวจพบ</div></div></div></section>
+<button id="imbOpen" class="roundMenu notifyBtn" type="button" aria-label="Imbalance levels">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+<span id="imbBadge" class="badge">0</span>
+</button>
+<div id="calendarModal" class="modal" aria-hidden="true"><div class="modalPanel">
+<div class="modalHead"><div><div class="lab">IMBALANCE ALERT CALENDAR</div><div class="muted">เก็บให้อัตโนมัติทุกครั้งที่มีแจ้งเตือนจริง</div></div><button id="calendarClose" class="circleClose" type="button">×</button></div>
+<div class="calNav"><button id="calPrev" type="button">‹</button><div id="calTitle" class="calTitle"></div><button id="calNext" type="button">›</button></div>
+<div class="calendarGrid"><div class="calDow">SUN</div><div class="calDow">MON</div><div class="calDow">TUE</div><div class="calDow">WED</div><div class="calDow">THU</div><div class="calDow">FRI</div><div class="calDow">SAT</div></div>
+<div id="calGrid" class="calendarGrid"></div><div id="calSummary" class="calSummary">—</div>
+</div></div><div id="imbModal" class="modal" aria-hidden="true">
+ <div class="modalPanel">
+  <div class="modalHead"><div><div class="lab">IMBALANCE OPEN LEVELS</div><div class="muted">AUTO DISCOVERED</div></div><button id="imbClose" class="circleClose" type="button">×</button></div>
+  <div class="levels" id="levels"><div class="muted">No Imbalance levels loaded yet.</div></div>
+ </div>
+</div>
+<button id="settingsOpen" class="roundMenu settingsBtn" type="button" aria-label="Settings">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.15.38.36.72.6 1 .28.3.67.45 1.1.45h.1v4h-.1c-.43 0-.82.15-1.1.45-.24.28-.45.62-.6 1Z"/></svg>
+</button>
+<div id="settingsModal" class="modal" aria-hidden="true"><div class="modalPanel">
+<div class="modalHead"><div class="lab">DETECTOR SETTINGS</div><button id="settingsClose" class="circleClose" type="button">×</button></div>
+<section class="card form"><div class="lab">DETECTOR SETTINGS</div><div class="row"><div class="field"><label>MIN IMB GAP (USD)</label><input id="gap" class="input" value=".15" inputmode="decimal"></div><div class="field"><label>REJECTION TOLERANCE</label><input id="tol" class="input" value=".35" inputmode="decimal"></div></div><div class="field"><label>MIN DISPLACEMENT (%)</label><input id="disp" class="input" value=".06" inputmode="decimal"><div class="muted" style="margin:6px 2px 0">ราคาต้องวิ่งออกจากจุดเดิมอย่างน้อยเท่านี้ ถึงจะนับว่าเข้าเงื่อนไข</div></div><div class="field"><label>WORKER URL</label><input id="worker" class="input" placeholder="https://...workers.dev"></div><div class="field"><label>ADMIN KEY</label><input id="key" type="password" class="input" placeholder="รหัสที่คุณตั้งเอง"></div><div class="buttons"><button id="save" class="btn save">SAVE & ARM</button></div><div class="notice">ระบบจะจำ Imbalance ที่เข้าเงื่อนไขไว้ แล้วรอให้ราคากลับมาทดสอบบริเวณเดิมก่อนแจ้งเตือน</div></section></div></div>
+
+<section class="card liveFeedCard" style="margin-top:10px">
+<div class="liveHead"><div><div class="lab">LIVE ALERTS</div><div class="muted">XAUX IMBALANCE FEED</div></div><div class="liveState"><span></span> LIVE</div></div>
+<div id="liveFeed" class="liveFeed"><div class="muted">Waiting for Imbalance alerts…</div></div>
+</section><section class="card" style="margin-top:10px"><div class="lab">REJECTION HISTORY</div><div id="events"><div class="event"><b>Waiting</b><div>เจอจังหวะเมื่อไหร่ เดี๋ยวขึ้นให้ตรงนี้</div></div></div></section>
 </main><script>
-const $=x=>document.getElementById(x),K=['gap','tol','disp','worker','key'];let s=JSON.parse(localStorage.getItem('xauv4')||'{}');K.forEach(k=>{if(s[k]!=null)$(k).value=s[k]});const base=()=>$('worker').value.trim().replace(/\/$/,'');
-const levelsBody=$('levelsBody'),levelsToggle=$('levelsToggle'),levelsChevron=$('levelsChevron');
-let levelsOpen=localStorage.getItem('xauxLevelsOpen')!=='0';
-function setLevelsOpen(v){levelsOpen=v;levelsBody.classList.toggle('open',v);levelsToggle.setAttribute('aria-expanded',String(v));levelsToggle.closest('.watched').classList.toggle('closed',!v);localStorage.setItem('xauxLevelsOpen',v?'1':'0')}
-setLevelsOpen(levelsOpen);levelsToggle.onclick=()=>setLevelsOpen(!levelsOpen);
+const $=x=>document.getElementById(x),K=['gap','tol','disp','worker','key'];let s=JSON.parse(localStorage.getItem('xauv4')||'{}');s.worker=s.worker||'https://fd10.janz170962.workers.dev/';s.key=s.key||'12345';K.forEach(k=>{if(s[k]!=null)$(k).value=s[k]});const base=()=>$('worker').value.trim().replace(/\/$/,'');
+
+const openModal=id=>{const m=$(id);m.classList.add('show');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'};
+const closeModal=id=>{const m=$(id);m.classList.remove('show');m.setAttribute('aria-hidden','true');document.body.style.overflow=''};
+$('imbOpen').onclick=()=>openModal('imbModal');$('imbClose').onclick=()=>closeModal('imbModal');
+$('settingsOpen').onclick=()=>openModal('settingsModal');
+
+let calCursor=new Date();
+function eventDateKey(v){
+ const raw=v?.time||"";
+ const m=String(raw).match(/^(\d{4})-(\d{2})-(\d{2})/);
+ return m?`${m[1]}-${m[2]}-${m[3]}`:"";
+}
+let calendarEvents=[];
+function renderCalendar(){
+ const y=calCursor.getFullYear(),m=calCursor.getMonth(),first=new Date(y,m,1),days=new Date(y,m+1,0).getDate();
+ const counts={};calendarEvents.forEach(e=>{const k=eventDateKey(e);if(k)counts[k]=(counts[k]||0)+1});
+ $('calTitle').textContent=new Intl.DateTimeFormat('en',{month:'long',year:'numeric'}).format(first);
+ let x='';for(let i=0;i<first.getDay();i++)x+='<div class="calDay empty"></div>';
+ const now=new Date(),today=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+ let total=0;
+ for(let d=1;d<=days;d++){const k=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`,n=counts[k]||0;total+=n;x+=`<div class="calDay ${k===today?'today':''}">${d}<span class="calCount ${n?'':'zero'}">${n?`${n} ALERT${n>1?'S':''}`:'—'}</span></div>`}
+ $('calGrid').innerHTML=x;$('calSummary').textContent=`เดือนนี้มีแจ้งเตือนแล้ว ${total} ครั้ง`;
+}
+async function refreshCalendar(){
+ try{const r=await fetch(base()+'/status'),d=await r.json();calendarEvents=d.events||[];renderCalendar()}catch(e){renderCalendar()}
+}
+$('calendarOpen').onclick=async()=>{await refreshCalendar();openModal('calendarModal')};$('calendarClose').onclick=()=>closeModal('calendarModal');
+$('calPrev').onclick=()=>{calCursor=new Date(calCursor.getFullYear(),calCursor.getMonth()-1,1);renderCalendar()};
+$('calNext').onclick=()=>{calCursor=new Date(calCursor.getFullYear(),calCursor.getMonth()+1,1);renderCalendar()};
+$('calendarModal').addEventListener('click',e=>{if(e.target===$('calendarModal'))closeModal('calendarModal')});
+$('settingsClose').onclick=()=>closeModal('settingsModal');
+['imbModal','settingsModal'].forEach(id=>$(id).addEventListener('click',e=>{if(e.target===$(id))closeModal(id)}));
+
 
 function render(d){if(d.price){$('price').textContent=Number(d.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});$('stamp').textContent='Updated '+new Date(d.updatedAt).toLocaleString('th-TH')}if(d.lastClosed)$('candle').textContent=`O ${d.lastClosed.open.toFixed(2)}  H ${d.lastClosed.high.toFixed(2)}  L ${d.lastClosed.low.toFixed(2)}  C ${d.lastClosed.close.toFixed(2)}`;let L=d.levels||[];$('count').textContent=L.length+' LEVEL'+(L.length===1?'':'S');$('levels').innerHTML=L.length?L.map(x=>`<div class="level"><div class="l"><span class="dot ${x.type==='BULL'?'bull':'bear'}"></span><div><b>${Number(x.level).toFixed(2)}</b><div class="tag">${x.type==='BULL'?'BULLISH / LOW':'BEARISH / HIGH'} • ${x.created}<br>DISP ${Number(x.displacementPct||0).toFixed(3)}%</div></div></div><span class="tag">IMB OPEN</span></div>`).join(''):'<div class="muted">No active IMB found.</div>';if(d.events?.length)$('events').innerHTML=d.events.map(e=>`<div class="event"><b>${e.type==='BULL'?'🟢':'🔴'} ${e.type} REJECTION • ${Number(e.level).toFixed(2)}</b><div>${e.time} • close ${Number(e.close).toFixed(2)}</div></div>`).join('')}
 
-function calcRisk(){
- const bal=+$('bal').value,rp=+$('riskPct').value,en=+$('entry').value,sl=+$('sl').value,tp=+$('tp').value,lot=+$('lot').value,cs=+$('contract').value;
- const budget=bal*rp/100, stop=Math.abs(en-sl), reward=Math.abs(tp-en);
- const riskAtLot=stop*lot*cs, ratio=stop>0?reward/stop:0, suggested=stop>0&&cs>0?budget/(stop*cs):0;
- $('riskBudget').textContent=Number.isFinite(budget)?'$'+budget.toFixed(2):'$—';
- $('riskLot').textContent=stop>0&&lot>0&&cs>0?'$'+riskAtLot.toFixed(2):'$—';
- $('rr').textContent=stop>0&&reward>=0?'1 : '+ratio.toFixed(2):'—';
- $('lotForRisk').textContent=suggested>0?suggested.toFixed(3)+' lot':'—';
+
+
+function renderLiveFeed(events){
+ const box=$('liveFeed'),arr=(events||[]).slice(0,20);
+ if(!arr.length){box.innerHTML='<div class="muted">Waiting for Imbalance alerts…</div>';return}
+ box.innerHTML=arr.map(e=>{
+   const bull=e.type==='BULL', t=e.time||'—', disp=Number(e.displacementPct||0);
+   return `<div class="feedItem ${bull?'feedBull':'feedBear'}"><div class="feedTop"><div class="feedTitle">${bull?'BULLISH':'BEARISH'} IMBALANCE RETEST</div><div class="feedTime">${t}</div></div><div class="feedMeta"><div><small>ORIGIN OPEN</small><b>${Number(e.level||0).toFixed(2)}</b></div><div><small>DISPLACEMENT</small><b>${disp.toFixed(3)}%</b></div></div></div>`
+ }).join('');
 }
-['bal','riskPct','entry','sl','tp','lot','contract'].forEach(id=>$(id).addEventListener('input',calcRisk));calcRisk();
 
 async function poll(){if(!base())return;try{let r=await fetch(base()+'/status');if(r.ok){render(await r.json());$('online').textContent='● ONLINE'}}catch{$('online').textContent='● OFFLINE'}}
-$('save').onclick=async()=>{let x={};K.forEach(k=>x[k]=$(k).value);localStorage.setItem('xauv4',JSON.stringify(x));try{let r=await fetch(base()+'/config',{method:'POST',headers:{'content-type':'application/json','x-admin-key':x.key},body:JSON.stringify({enabled:true,minGap:+x.gap,tolerance:+x.tol,maxLevels:20,minDisplacementPct:+x.disp})});alert(r.ok?'First IMB monitor armed ✓':'Save failed: '+await r.text())}catch{alert('Worker connection failed')}};
-$('demo').onclick=async()=>{try{let r=await fetch(base()+'/demo',{method:'POST',headers:{'x-admin-key':$('key').value}});alert(r.ok?'Demo sent ✓':'Demo failed: '+await r.text())}catch{alert('Worker connection failed')}};
+$('save').onclick=async()=>{let x={};K.forEach(k=>x[k]=$(k).value);localStorage.setItem('xauv4',JSON.stringify(x));try{let r=await fetch(base()+'/config',{method:'POST',headers:{'content-type':'application/json','x-admin-key':x.key},body:JSON.stringify({enabled:true,minGap:+x.gap,tolerance:+x.tol,maxLevels:20,minDisplacementPct:+x.disp})});alert(r.ok?'Imbalance monitor armed ✓':'Save failed: '+await r.text())}catch{alert('Worker connection failed')}};
+
 poll();setInterval(poll,10000);
 </script></body></html>
