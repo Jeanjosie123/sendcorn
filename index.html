@@ -307,19 +307,7 @@ body[data-market] .settingsBtn svg{
  <path d="M17 49h30" stroke="#f2d36d" stroke-width="1.2" opacity=".55"/>
 </svg></div><div><b>XAUX Beta 0.9.8x</b><div class="sub">M5 • IMBALANCE MONITOR</div></div></div><div class="on" id="online">● READY</div></header>
 <div class="marketTabs"><button class="marketTab active" data-market="XAUUSD">● XAU/USD</button><button class="marketTab" data-market="US100">● US100</button><button class="marketTab" data-market="BTCUSD">● BTC/USD</button></div><section class="hero"><div class="flex"><b style="font-size:12px">XAU/USD</b><span class="muted">M5</span></div><div class="price" id="price">—</div><div class="muted" id="stamp">กำลังเชื่อมต่อข้อมูลราคา…</div></section>
-<section class="grid"><div class="card"><div class="lab">IMBALANCE WATCHED</div><div class="val green" id="count">0 LEVELS</div></div><div class="card"><div class="lab">MODE</div><div class="val">IMBALANCE</div></div><div class="card full candleCard">
-<div class="lab">LAST CLOSED M5</div>
-<div id="candle" class="candleViz">
-  <div class="ohlcLabel ohlcH"><span>H</span><b id="ohlcH">—</b><i></i></div>
-  <div class="ohlcLabel ohlcO"><span>O</span><b id="ohlcO">—</b><i></i></div>
-  <div class="candleStage">
-    <div id="candleWick" class="candleWick"></div>
-    <div id="candleBody" class="candleBody"></div>
-  </div>
-  <div class="ohlcLabel ohlcC"><i></i><span>C</span><b id="ohlcC">—</b></div>
-  <div class="ohlcLabel ohlcL"><i></i><span>L</span><b id="ohlcL">—</b></div>
-</div>
-</div></section>
+<section class="grid"><div class="card"><div class="lab">IMBALANCE WATCHED</div><div class="val green" id="count">0 LEVELS</div></div><div class="card"><div class="lab">MODE</div><div class="val">IMBALANCE</div></div></section>
 <button id="calendarOpen" class="roundMenu calendarBtn" type="button" aria-label="Alert calendar">
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v3M19 3v3M4 8h16M5 5h14a2 2 0 0 1 2 2v13H3V7a2 2 0 0 1 2-2Z"/><path d="M7 12h2M11 12h2M15 12h2M7 16h2M11 16h2M15 16h2"/></svg>
 </button>
@@ -394,7 +382,7 @@ $('settingsClose').onclick=()=>closeModal('settingsModal');
 ['imbModal','settingsModal'].forEach(id=>$(id).addEventListener('click',e=>{if(e.target===$(id))closeModal(id)}));
 
 
-function render(d){if(d.market&&d.market!==activeMarket)return;marketHistory[activeMarket]=(d.events||[]).slice();lastXauEvents=marketHistory.XAUUSD;if(d.price){$('price').textContent=Number(d.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});$('stamp').textContent='Updated '+new Date(d.updatedAt).toLocaleString('th-TH')}if(d.lastClosed){const k=d.lastClosed,o=+k.open,hi=+k.high,lo=+k.low,c=+k.close,r=Math.max(hi-lo,.00001),body=$('candleBody'),wick=$('candleWick');$('ohlcO').textContent=o.toFixed(2);$('ohlcH').textContent=hi.toFixed(2);$('ohlcL').textContent=lo.toFixed(2);$('ohlcC').textContent=c.toFixed(2);const top=((hi-Math.max(o,c))/r)*100,bot=((hi-Math.min(o,c))/r)*100;body.style.top=Math.max(7,top)+'%';body.style.height=Math.max(8,bot-top)+'%';body.classList.toggle('bull',c>=o);body.classList.toggle('bear',c<o);wick.style.background=c>=o?'#8affc6':'#ff8585';}let L=d.levels||[];$('count').textContent=L.length+' LEVEL'+(L.length===1?'':'S');$('levels').innerHTML=L.length?L.map(x=>`<div class="level"><div class="l"><span class="dot ${x.type==='BULL'?'bull':'bear'}"></span><div><b>${Number(x.level).toFixed(2)}</b><div class="tag">${x.type==='BULL'?'BULLISH / LOW':'BEARISH / HIGH'} • ${x.created}<br>DISP ${Number(x.displacementPct||0).toFixed(3)}%</div></div></div><span class="tag">IMB OPEN</span></div>`).join(''):'<div class="muted">No active IMB found.</div>';if(d.events?.length)$('events').innerHTML=d.events.map(e=>{const tm=xauxTimes(e.time);return `<div class="event"><b>${e.type==='BULL'?'🟢':'🔴'} ${e.type} REJECTION • ${Number(e.level).toFixed(2)}</b><div class="eventTime">UTC-4 ${tm.ref}<br>TH ${tm.th} • Close ${Number(e.close).toFixed(2)}</div></div>`}).join('')}
+function render(d){if(d.market&&d.market!==activeMarket)return;marketHistory[activeMarket]=(d.events||[]).slice();lastXauEvents=marketHistory.XAUUSD;if(d.price){$('price').textContent=Number(d.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});$('stamp').textContent='Updated '+new Date(d.updatedAt).toLocaleString('th-TH')}let L=d.levels||[];$('count').textContent=L.length+' LEVEL'+(L.length===1?'':'S');$('levels').innerHTML=L.length?L.map(x=>`<div class="level"><div class="l"><span class="dot ${x.type==='BULL'?'bull':'bear'}"></span><div><b>${Number(x.level).toFixed(2)}</b><div class="tag">${x.type==='BULL'?'BULLISH / LOW':'BEARISH / HIGH'} • ${x.created}<br>DISP ${Number(x.displacementPct||0).toFixed(3)}%</div></div></div><span class="tag">IMB OPEN</span></div>`).join(''):'<div class="muted">No active IMB found.</div>';if(d.events?.length)$('events').innerHTML=d.events.map(e=>{const tm=xauxTimes(e.time);return `<div class="event"><b>${e.type==='BULL'?'🟢':'🔴'} ${e.type} REJECTION • ${Number(e.level).toFixed(2)}</b><div class="eventTime">UTC-4 ${tm.ref}<br>TH ${tm.th} • Close ${Number(e.close).toFixed(2)}</div></div>`}).join('')}
 
 
 
@@ -407,7 +395,7 @@ function xauxTimes(raw){
  const x=f(-4),t=f(7);return{ref:`${x.date} ${x.time}`,th:`${t.date} ${t.time}`,day:x.date};
 }
 function renderLiveFeed(events){
- const box=$('liveFeed'),arr=(events||[]).slice(0,20);
+ const box=$('liveFeed'),nowTH=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()),arr=(events||[]).filter(e=>xauxTimes(e.time).th.slice(0,10)===nowTH).slice(0,20);
  if(!arr.length){box.innerHTML='<div class="muted">Waiting for Imbalance alerts…</div>';return}
  box.innerHTML=arr.map(e=>{
    const bull=e.type==='BULL',tm=xauxTimes(e.time),t=`UTC-4 ${tm.ref}<br>TH ${tm.th}`,disp=Number(e.displacementPct||0);
@@ -439,7 +427,7 @@ document.querySelectorAll(".marketTab").forEach(x=>x.classList.toggle("active",x
  $("price").textContent="—";
  $("stamp").textContent="Loading "+names[m]+"…";
  $("count").textContent="0 LEVELS";
- ["ohlcO","ohlcH","ohlcL","ohlcC"].forEach(id=>{const e=$(id);if(e)e.textContent="—"});
+
  const levels=$("levels");if(levels)levels.innerHTML='<div class="muted">Loading '+names[m]+' detector…</div>';
  renderMarketHistory(m);
  renderLiveFeed(marketHistory[m]||[]);
