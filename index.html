@@ -1,4 +1,4 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07090d"><title>XAUX Beta 0.9.8x</title>
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07090d"><title>XAUX Beta 0.9.9x</title>
 <style>
 :root{--bg:#07090d;--card:#0d1219;--line:#202936;--text:#f5f6f8;--muted:#8490a2;--gold:#e8c35c;--green:#4ad895;--red:#ff6577}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#1c2533,#080b10 42%,#06080b);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.w{max-width:720px;margin:auto;padding:17px 15px 50px}.top,.flex{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px}.au{width:50px;height:43px;border:1px solid #504424;background:#17150e;border-radius:14px;display:grid;place-items:center;color:var(--gold);font-weight:800}.sub,.muted{font-size:10px;color:var(--muted)}.sub{letter-spacing:.12em;margin-top:3px}.on{font-size:10px;color:#72dfa8;border:1px solid #244b39;background:#0b1b14;padding:7px 9px;border-radius:99px}.hero,.card{border:1px solid var(--line);background:linear-gradient(145deg,#111720ed,#0a0f15f5);border-radius:21px}.hero{margin-top:16px;padding:21px;box-shadow:0 18px 55px #0007}.price{font-size:41px;font-weight:760;letter-spacing:-.045em;margin:12px 0 2px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.card{padding:15px}.full{grid-column:1/-1}.lab{font-size:10px;color:var(--muted);letter-spacing:.09em;margin-bottom:8px}.val{font-size:17px;font-weight:720}.green{color:var(--green)}.levels{display:grid;gap:8px}.level{display:flex;align-items:center;justify-content:space-between;padding:11px 12px;border-radius:13px;background:#090d13;border:1px solid #1c2531}.level .l{display:flex;align-items:center;gap:9px}.dot{width:7px;height:7px;border-radius:50%}.bull{background:var(--green);box-shadow:0 0 10px #4ad89577}.bear{background:var(--red);box-shadow:0 0 10px #ff657777}.level b{font-size:14px}.tag{font-size:9px;color:var(--muted)}.form{margin-top:10px}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.field{margin-bottom:10px}.field label{display:block;font-size:10px;color:var(--muted);margin:0 0 6px 2px}.input{width:100%;border:1px solid var(--line);background:#080c12;color:#fff;border-radius:13px;padding:13px;font-size:14px;outline:none}.buttons{display:grid;grid-template-columns:1fr .7fr;gap:8px}.btn{border:0;border-radius:13px;padding:14px;font-weight:800}.save{background:linear-gradient(135deg,#f1d173,#c79a34);color:#171208}.demo{background:#171e28;color:#e7ebf1;border:1px solid #273241}.logic{font-size:11px;line-height:1.65;color:#aab3bf}.logic b{color:#fff}.event{border-left:2px solid #3b4654;padding-left:10px;margin-top:10px}.event b{font-size:12px}.event div{font-size:10px;color:var(--muted);margin-top:3px}.notice{font-size:10px;line-height:1.5;color:#c8b978;background:#17150e;border:1px solid #4b4125;padding:10px 11px;border-radius:12px;margin-top:10px}
 .watchHead{width:100%;padding:0;background:none;border:0;color:inherit;display:flex;align-items:center;justify-content:space-between;text-align:left;cursor:pointer}.watchHead .tag{display:block;margin-top:4px}.chev{font-size:18px;color:var(--muted);transition:transform .22s ease}.collapse{display:grid;grid-template-rows:0fr;opacity:.55;transition:grid-template-rows .28s ease,opacity .22s ease,margin-top .28s ease;margin-top:0}.collapse>.levels{overflow:hidden}.collapse.open{grid-template-rows:1fr;opacity:1;margin-top:10px}.watched.closed .chev{transform:rotate(180deg)}.settingsDrawer{margin-top:10px;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}.settingsDrawer>summary{list-style:none;display:flex;align-items:center;gap:10px;padding:14px 16px;cursor:pointer;font-size:12px;font-weight:800;letter-spacing:.08em}.settingsDrawer>summary::-webkit-details-marker{display:none}.drawerArrow{margin-left:auto;font-size:18px}.drawerBody{padding:0 10px 10px}.drawerBody>.card{margin:0;border:0;box-shadow:none;background:transparent;padding:6px}
@@ -280,6 +280,18 @@ body[data-market] .settingsBtn svg{
  stroke:#fff!important;
  filter:drop-shadow(0 0 5px rgba(var(--market-rgb),.48))!important;
 }
+
+.multiverseCard{margin-top:10px;padding:16px 18px}
+.mvHead{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:12px}
+.mvPercent{font-size:22px;font-weight:900;color:#fff;letter-spacing:-.5px}
+.mvOverall{font-size:11px;font-weight:800;color:#aaa;margin-top:2px;text-align:right}
+.mvGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.mvCell{min-width:0;text-align:center;padding:9px 2px;border:1px solid rgba(212,175,55,.12);border-radius:10px;background:rgba(0,0,0,.18)}
+.mvTf{font-size:9px;color:#8f8979;font-weight:800;margin-bottom:5px}
+.mvTrend{font-size:9px;font-weight:900;white-space:nowrap}
+.mvUp{color:#35d98a}.mvDown{color:#ff5b67}.mvSide{color:#8b8b8b}
+@media(max-width:420px){.mvGrid{gap:4px}.mvCell{padding:8px 1px}.mvTrend{font-size:8px}}
+
 </style></head><body><main class="w">
 <header class="top"><div class="brand"><div class="au goldLogo" aria-label="Gold">
 <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
@@ -308,6 +320,7 @@ body[data-market] .settingsBtn svg{
   <div class="notifyTabs"><button class="notifyTab active" data-notify="levelsPanel">IMBALANCE</button><button class="notifyTab" data-notify="updatesPanel">UPDATES</button></div>
   <div id="levelsPanel" class="notifyPanel active"><div class="levels" id="levels"><div class="muted">No Imbalance levels loaded yet.</div></div></div>
   <div id="updatesPanel" class="notifyPanel">
+    <div class="updateItem"><b>v0.9.9x</b><span>Added MULTIVERSE multi-timeframe trend alignment and Discord alignment alerts.</span></div>
     <div class="updateItem"><b>v0.9.8x</b><span>Improved alert history, calendar and notification views.</span></div>
     <div class="updateItem"><b>v0.9.7x</b><span>Black glass UI, transparent market tabs, update log and copyright footer.</span></div>
     <div class="updateItem"><b>v0.9.6x</b><span>Fixed UTC-4 and Thailand signal-time display.</span></div>
@@ -324,6 +337,23 @@ body[data-market] .settingsBtn svg{
 <div id="settingsModal" class="modal" aria-hidden="true"><div class="modalPanel">
 <div class="modalHead"><div class="lab">DETECTOR SETTINGS</div><button id="settingsClose" class="circleClose" type="button">×</button></div>
 <section class="card form"><div class="lab">DETECTOR SETTINGS</div><div class="row"><div class="field"><label>MIN IMB GAP (USD)</label><input id="gap" class="input" value=".15" inputmode="decimal"></div><div class="field"><label>REJECTION TOLERANCE</label><input id="tol" class="input" value=".35" inputmode="decimal"></div></div><div class="field"><label>MIN DISPLACEMENT (%)</label><input id="disp" class="input" value=".06" inputmode="decimal"><div class="muted" style="margin:6px 2px 0">ราคาต้องวิ่งออกจากจุดเดิมอย่างน้อยเท่านี้ ถึงจะนับว่าเข้าเงื่อนไข</div></div><div class="field"><label>WORKER URL</label><input id="worker" class="input" placeholder="https://...workers.dev"></div><div class="field"><label>ADMIN KEY</label><input id="key" type="password" class="input" placeholder="รหัสที่คุณตั้งเอง"></div><div class="buttons"><button id="save" class="btn save">SAVE & ARM</button></div><div class="notice">ระบบจะจำ Imbalance ที่เข้าเงื่อนไขไว้ แล้วรอให้ราคากลับมาทดสอบบริเวณเดิมก่อนแจ้งเตือน</div></section></div></div>
+
+
+<section class="card multiverseCard">
+ <div class="mvHead">
+  <div><div class="lab">MULTIVERSE</div><div class="muted">W • D • H4 • H1 • M30 • M15 • M5</div></div>
+  <div><div id="mvPercent" class="mvPercent">0%</div><div id="mvOverall" class="mvOverall">กำลังวิเคราะห์…</div></div>
+ </div>
+ <div class="mvGrid">
+  <div class="mvCell"><div class="mvTf">W</div><div id="mvW" class="mvTrend mvSide">—</div></div>
+  <div class="mvCell"><div class="mvTf">D</div><div id="mvD" class="mvTrend mvSide">—</div></div>
+  <div class="mvCell"><div class="mvTf">H4</div><div id="mvH4" class="mvTrend mvSide">—</div></div>
+  <div class="mvCell"><div class="mvTf">H1</div><div id="mvH1" class="mvTrend mvSide">—</div></div>
+  <div class="mvCell"><div class="mvTf">M30</div><div id="mvM30" class="mvTrend mvSide">—</div></div>
+  <div class="mvCell"><div class="mvTf">M15</div><div id="mvM15" class="mvTrend mvSide">—</div></div>
+  <div class="mvCell"><div class="mvTf">M5</div><div id="mvM5" class="mvTrend mvSide">—</div></div>
+ </div>
+</section>
 
 <section class="card liveFeedCard" style="margin-top:10px">
 <div class="liveHead"><div><div class="lab">LIVE ALERTS</div><div class="muted">XAUX IMBALANCE FEED</div></div><div class="liveState"><span></span> LIVE</div></div>
@@ -364,7 +394,23 @@ $('settingsClose').onclick=()=>closeModal('settingsModal');
 ['imbModal','settingsModal'].forEach(id=>$(id).addEventListener('click',e=>{if(e.target===$(id))closeModal(id)}));
 
 
-function render(d){lastXauEvents=(d.events||[]).slice();if(d.price){$('price').textContent=Number(d.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});$('stamp').textContent=(d.marketClosed?'ตลาดปิด • ราคาล่าสุด ':'Updated ')+new Date(d.updatedAt).toLocaleString('th-TH')}else if(d.health?.marketError){$('stamp').textContent=d.health.marketError}renderLiveFeed(d.events||[]);let L=d.levels||[];$('count').textContent=L.length+' LEVEL'+(L.length===1?'':'S');$('levels').innerHTML=L.length?L.map(x=>`<div class="level"><div class="l"><span class="dot ${x.type==='BULL'?'bull':'bear'}"></span><div><b>${Number(x.level).toFixed(2)}</b><div class="tag">${x.type==='BULL'?'BULLISH / LOW':'BEARISH / HIGH'} • ${x.created}<br>DISP ${Number(x.displacementPct||0).toFixed(3)}%</div></div></div><span class="tag">IMB OPEN</span></div>`).join(''):'<div class="muted">No active IMB found.</div>';if(d.events?.length)$('events').innerHTML=d.events.map(e=>{const tm=xauxTimes(e.time);return `<div class="event"><b>${e.type==='BULL'?'🟢':'🔴'} ${e.type} REJECTION • ${Number(e.level).toFixed(2)}</b><div class="eventTime">UTC-4 ${tm.ref}<br>TH ${tm.th} • Close ${Number(e.close).toFixed(2)}</div></div>`}).join('')}
+
+function renderMultiverse(mv){
+ if(!mv)return;
+ const keys=['W','D','H4','H1','M30','M15','M5'];
+ keys.forEach(k=>{
+  const el=$('mv'+k),t=Number(mv.trends?.[k]||0);
+  if(!el)return;
+  el.textContent=t===1?'ขึ้น ↑':t===-1?'ลง ↓':'ข้าง →';
+  el.className='mvTrend '+(t===1?'mvUp':t===-1?'mvDown':'mvSide');
+ });
+ $('mvPercent').textContent=Number(mv.alignment||0)+'%';
+ const o=Number(mv.overall||0);
+ $('mvOverall').textContent=o===1?'ภาพรวม ขาขึ้น ↑':o===-1?'ภาพรวม ขาลง ↓':'ภาพรวม ออกข้าง →';
+ $('mvPercent').className='mvPercent '+(o===1?'mvUp':o===-1?'mvDown':'mvSide');
+}
+
+function render(d){renderMultiverse(d.multiverse);lastXauEvents=(d.events||[]).slice();if(d.price){$('price').textContent=Number(d.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});$('stamp').textContent=(d.marketClosed?'ตลาดปิด • ราคาล่าสุด ':'Updated ')+new Date(d.updatedAt).toLocaleString('th-TH')}else if(d.health?.marketError){$('stamp').textContent=d.health.marketError}renderLiveFeed(d.events||[]);let L=d.levels||[];$('count').textContent=L.length+' LEVEL'+(L.length===1?'':'S');$('levels').innerHTML=L.length?L.map(x=>`<div class="level"><div class="l"><span class="dot ${x.type==='BULL'?'bull':'bear'}"></span><div><b>${Number(x.level).toFixed(2)}</b><div class="tag">${x.type==='BULL'?'BULLISH / LOW':'BEARISH / HIGH'} • ${x.created}<br>DISP ${Number(x.displacementPct||0).toFixed(3)}%</div></div></div><span class="tag">IMB OPEN</span></div>`).join(''):'<div class="muted">No active IMB found.</div>';if(d.events?.length)$('events').innerHTML=d.events.map(e=>{const tm=xauxTimes(e.time);return `<div class="event"><b>${e.type==='BULL'?'🟢':'🔴'} ${e.type} REJECTION • ${Number(e.level).toFixed(2)}</b><div class="eventTime">UTC-4 ${tm.ref}<br>TH ${tm.th} • Close ${Number(e.close).toFixed(2)}</div></div>`}).join('')}
 
 
 
