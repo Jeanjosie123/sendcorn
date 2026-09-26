@@ -1,4 +1,4 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07090d"><title>XAUX Beta 0.9.6x</title>
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07090d"><title>XAUX Beta 0.9.8x</title>
 <style>
 :root{--bg:#07090d;--card:#0d1219;--line:#202936;--text:#f5f6f8;--muted:#8490a2;--gold:#e8c35c;--green:#4ad895;--red:#ff6577}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#1c2533,#080b10 42%,#06080b);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.w{max-width:720px;margin:auto;padding:17px 15px 50px}.top,.flex{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px}.au{width:50px;height:43px;border:1px solid #504424;background:#17150e;border-radius:14px;display:grid;place-items:center;color:var(--gold);font-weight:800}.sub,.muted{font-size:10px;color:var(--muted)}.sub{letter-spacing:.12em;margin-top:3px}.on{font-size:10px;color:#72dfa8;border:1px solid #244b39;background:#0b1b14;padding:7px 9px;border-radius:99px}.hero,.card{border:1px solid var(--line);background:linear-gradient(145deg,#111720ed,#0a0f15f5);border-radius:21px}.hero{margin-top:16px;padding:21px;box-shadow:0 18px 55px #0007}.price{font-size:41px;font-weight:760;letter-spacing:-.045em;margin:12px 0 2px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.card{padding:15px}.full{grid-column:1/-1}.lab{font-size:10px;color:var(--muted);letter-spacing:.09em;margin-bottom:8px}.val{font-size:17px;font-weight:720}.green{color:var(--green)}.levels{display:grid;gap:8px}.level{display:flex;align-items:center;justify-content:space-between;padding:11px 12px;border-radius:13px;background:#090d13;border:1px solid #1c2531}.level .l{display:flex;align-items:center;gap:9px}.dot{width:7px;height:7px;border-radius:50%}.bull{background:var(--green);box-shadow:0 0 10px #4ad89577}.bear{background:var(--red);box-shadow:0 0 10px #ff657777}.level b{font-size:14px}.tag{font-size:9px;color:var(--muted)}.form{margin-top:10px}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.field{margin-bottom:10px}.field label{display:block;font-size:10px;color:var(--muted);margin:0 0 6px 2px}.input{width:100%;border:1px solid var(--line);background:#080c12;color:#fff;border-radius:13px;padding:13px;font-size:14px;outline:none}.buttons{display:grid;grid-template-columns:1fr .7fr;gap:8px}.btn{border:0;border-radius:13px;padding:14px;font-weight:800}.save{background:linear-gradient(135deg,#f1d173,#c79a34);color:#171208}.demo{background:#171e28;color:#e7ebf1;border:1px solid #273241}.logic{font-size:11px;line-height:1.65;color:#aab3bf}.logic b{color:#fff}.event{border-left:2px solid #3b4654;padding-left:10px;margin-top:10px}.event b{font-size:12px}.event div{font-size:10px;color:var(--muted);margin-top:3px}.notice{font-size:10px;line-height:1.5;color:#c8b978;background:#17150e;border:1px solid #4b4125;padding:10px 11px;border-radius:12px;margin-top:10px}
 .watchHead{width:100%;padding:0;background:none;border:0;color:inherit;display:flex;align-items:center;justify-content:space-between;text-align:left;cursor:pointer}.watchHead .tag{display:block;margin-top:4px}.chev{font-size:18px;color:var(--muted);transition:transform .22s ease}.collapse{display:grid;grid-template-rows:0fr;opacity:.55;transition:grid-template-rows .28s ease,opacity .22s ease,margin-top .28s ease;margin-top:0}.collapse>.levels{overflow:hidden}.collapse.open{grid-template-rows:1fr;opacity:1;margin-top:10px}.watched.closed .chev{transform:rotate(180deg)}.settingsDrawer{margin-top:10px;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}.settingsDrawer>summary{list-style:none;display:flex;align-items:center;gap:10px;padding:14px 16px;cursor:pointer;font-size:12px;font-weight:800;letter-spacing:.08em}.settingsDrawer>summary::-webkit-details-marker{display:none}.drawerArrow{margin-left:auto;font-size:18px}.drawerBody{padding:0 10px 10px}.drawerBody>.card{margin:0;border:0;box-shadow:none;background:transparent;padding:6px}
@@ -62,16 +62,264 @@ body{background:radial-gradient(circle at 50% -15%,rgba(183,139,31,.075),transpa
 @property --xaux-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
 @keyframes xauxBorderOrbit{to{--xaux-angle:360deg}}
 @media (prefers-reduced-motion:reduce){.price:after,.hero:after,.priceCard:after{animation:none}}
-.healthWarn{color:#e1b94f!important}.healthErr{color:#d98b65!important}.historyToggle{width:100%;padding:0;border:0;background:transparent;color:inherit;display:flex;align-items:center;justify-content:space-between;text-align:left}.historyChevron{font-size:19px;color:#d5b451;transition:transform .22s}.historyWrap{display:grid;grid-template-rows:1fr;opacity:1;transition:.22s;margin-top:12px}.historyWrap>#events{overflow:hidden}.historyCard.collapsed .historyWrap{grid-template-rows:0fr;opacity:0;margin-top:0}.historyCard.collapsed .historyChevron{transform:rotate(180deg)}.eventTime{margin-top:5px!important;font-size:11px;color:#8f7c4b!important;line-height:1.45}</style></head><body><main class="w">
+.healthWarn{color:#e1b94f!important}.healthErr{color:#d98b65!important}.historyToggle{width:100%;padding:0;border:0;background:transparent;color:inherit;display:flex;align-items:center;justify-content:space-between;text-align:left}.historyChevron{font-size:19px;color:#d5b451;transition:transform .22s}.historyWrap{display:grid;grid-template-rows:1fr;opacity:1;transition:.22s;margin-top:12px}.historyWrap>#events{overflow:hidden}.historyCard.collapsed .historyWrap{grid-template-rows:0fr;opacity:0;margin-top:0}.historyCard.collapsed .historyChevron{transform:rotate(180deg)}.eventTime{margin-top:5px!important;font-size:11px;color:#8f7c4b!important;line-height:1.45}.marketTabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:2px 0 10px}.marketTab{border:1px solid rgba(212,175,55,.22);background:#080806;color:#8c7a49;border-radius:14px;padding:9px 3px;font:700 10px system-ui;letter-spacing:.25px}.marketTab small{display:block;font-size:6px;letter-spacing:1px;margin-top:3px;color:#655936}.marketTab.active{color:#ffffff;border-color:rgba(230,190,78,.6);box-shadow:0 0 16px rgba(212,175,55,.1)}.marketTab.pending{opacity:.72}.marketToast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,12px);z-index:9999;background:#090909;border:1px solid #5b4a20;color:#eeeeee;padding:9px 13px;border-radius:13px;font:600 11px system-ui;opacity:0;pointer-events:none;transition:.2s;white-space:nowrap}.marketToast.show{opacity:1;transform:translate(-50%,0)}
+/* 0.9.7x UI refinement */
+html,body{background:#000!important}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;
+ background:
+ radial-gradient(circle at 18% 10%,rgba(212,175,55,.055),transparent 30%),
+ radial-gradient(circle at 86% 45%,rgba(255,255,255,.025),transparent 28%),
+ #000;
+}
+.card,.hero,.modalCard,.sheet,.panel{
+ background:rgba(7,7,7,.56)!important;
+ -webkit-backdrop-filter:blur(18px) saturate(115%);
+ backdrop-filter:blur(18px) saturate(115%);
+}
+.marketTabs{
+ display:grid!important;grid-template-columns:repeat(3,1fr)!important;
+ gap:0!important;margin:2px 0 12px!important;
+ border-bottom:1px solid rgba(212,175,55,.12);
+}
+.marketTab{
+ position:relative!important;
+ border:0!important;border-radius:0!important;
+ background:transparent!important;
+ box-shadow:none!important;
+ padding:11px 2px 12px!important;
+ color:#776d55!important;
+ opacity:1!important;
+}
+.marketTab small{display:none!important}
+.marketTab.active{background:transparent!important;color:#ffffff!important;box-shadow:none!important}
+.marketTab.active:after{
+ content:"";position:absolute;left:22%;right:22%;bottom:-1px;height:1px;
+ background:#ffffff;box-shadow:0 0 9px rgba(228,189,85,.7);
+}
+.marketTab.pending{background:transparent!important}
+.notifyTabs{display:grid;grid-template-columns:1fr 1fr;margin:16px 0 12px;border-bottom:1px solid rgba(212,175,55,.14)}.notifyTab{border:0;background:transparent;color:#766b4d;padding:10px;font:700 10px system-ui;letter-spacing:1.2px;position:relative}.notifyTab.active{color:#ffffff}.notifyTab.active:after{content:"";position:absolute;left:25%;right:25%;bottom:-1px;height:1px;background:#ffffff;box-shadow:0 0 8px #ffffff}.notifyPanel{display:none}.notifyPanel.active{display:block}.updateItem{padding:13px 2px;border-bottom:1px solid rgba(212,175,55,.10)}.updateItem b{display:block;color:#ffffff;font-size:12px;margin-bottom:5px}.updateItem span{display:block;color:#9b927c;font-size:11px;line-height:1.55}.copyright{text-align:center;padding:28px 10px 18px;color:#5f594b;font:500 10px system-ui;letter-spacing:.7px}.copyright strong{color:#9b895b;font-weight:600}
+/* 0.9.7.2x — visible transparent glass foreground */
+.hero,.card,.modalPanel,.settingsModal .modalPanel,#imbModal .modalPanel,#calendarModal .modalPanel{
+ background:linear-gradient(145deg,rgba(24,24,22,.48),rgba(4,4,4,.34))!important;
+ -webkit-backdrop-filter:blur(22px) saturate(125%)!important;
+ backdrop-filter:blur(22px) saturate(125%)!important;
+ border-color:rgba(220,187,92,.24)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 18px 55px rgba(0,0,0,.32)!important;
+}
+.modal{
+ background:rgba(0,0,0,.46)!important;
+ -webkit-backdrop-filter:blur(9px)!important;
+ backdrop-filter:blur(9px)!important;
+}
+.marketTabs,.marketTab,.marketTab.active,.marketTab.pending{
+ background:transparent!important;
+ box-shadow:none!important;
+}
+
+/* 0.9.7.3x — monochrome white glow */
+:root{
+ --gold:#fff!important;--gold2:#f7f7f7!important;--gold3:#dcdcdc!important;
+ --accent:#fff!important;--accent2:#e9e9e9!important;
+}
+.lab,.brand,.priceLabel,.calTitle,.notifyTab.active,.marketTab.active,
+.updateItem b,.copyright strong,.historyChevron{
+ color:#fff!important;
+ text-shadow:0 0 7px rgba(255,255,255,.42),0 0 18px rgba(255,255,255,.16)!important;
+}
+.marketTab.active:after,.notifyTab.active:after{
+ background:#fff!important;
+ box-shadow:0 0 7px rgba(255,255,255,.95),0 0 18px rgba(255,255,255,.45)!important;
+}
+.hero,.card,.modalPanel,.sheet,.panel{
+ border-color:rgba(255,255,255,.18)!important;
+}
+.roundMenu,.circleClose,.calNav button,.settingsBtn{
+ border-color:rgba(255,255,255,.18)!important;
+ color:#fff!important;
+}
+.roundMenu svg,.settingsBtn svg{stroke:#fff!important;filter:drop-shadow(0 0 5px rgba(255,255,255,.38))}
+#price{
+ color:#fff!important;-webkit-text-fill-color:#fff!important;
+ text-shadow:0 0 8px rgba(255,255,255,.55),0 0 24px rgba(255,255,255,.22)!important;
+ filter:none!important;
+}
+.marketTabs{border-bottom-color:rgba(255,255,255,.10)!important}
+.notifyTabs{border-bottom-color:rgba(255,255,255,.10)!important}
+.updateItem{border-bottom-color:rgba(255,255,255,.08)!important}
+.copyright{color:#777!important}
+
+/* 0.9.7.4x — gold glow restored */
+:root{
+ --gold:#e7bd55!important;--gold2:#ffd978!important;--gold3:#b98b2f!important;
+ --accent:#e7bd55!important;--accent2:#ffd978!important;
+}
+.lab,.brand,.priceLabel,.calTitle,.notifyTab.active,.marketTab.active,
+.updateItem b,.copyright strong,.historyChevron{
+ color:#f2cb68!important;
+ text-shadow:0 0 7px rgba(242,203,104,.58),0 0 19px rgba(231,189,85,.27)!important;
+}
+.marketTab.active:after,.notifyTab.active:after{
+ background:#f3cb68!important;
+ box-shadow:0 0 8px rgba(255,216,112,.95),0 0 20px rgba(231,189,85,.55)!important;
+}
+.hero,.card,.modalPanel,.sheet,.panel{
+ border-color:rgba(231,189,85,.22)!important;
+}
+.roundMenu,.circleClose,.calNav button,.settingsBtn{
+ border-color:rgba(231,189,85,.23)!important;
+ color:#f2cb68!important;
+}
+.roundMenu svg,.settingsBtn svg{
+ stroke:#f2cb68!important;
+ filter:drop-shadow(0 0 6px rgba(242,203,104,.52))!important;
+}
+#price{
+ color:#f5ce6d!important;-webkit-text-fill-color:#f5ce6d!important;
+ text-shadow:0 0 8px rgba(255,216,112,.72),0 0 26px rgba(231,189,85,.34)!important;
+}
+.marketTabs,.notifyTabs{border-bottom-color:rgba(231,189,85,.13)!important}
+.updateItem{border-bottom-color:rgba(231,189,85,.10)!important}
+
+/* Price glow fix — visual-only, version remains 0.9.7x */
+#price{
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border:0!important;
+  outline:0!important;
+  filter:drop-shadow(0 0 5px rgba(246,205,103,.34))!important;
+  color:#f5ce6d!important;
+  -webkit-text-fill-color:#f5ce6d!important;
+  -webkit-background-clip:border-box!important;
+  background-clip:border-box!important;
+  text-shadow:
+    0 0 5px rgba(255,220,120,.70),
+    0 0 12px rgba(238,191,76,.32)!important;
+}
+#price::before,#price::after{
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* LAST CLOSED M5 — live 3D candle */
+.candleCard{overflow:hidden}
+.candleViz{height:220px;position:relative;margin-top:8px;display:grid;grid-template-columns:1fr 82px 1fr;align-items:center}
+.candleStage{grid-column:2;position:relative;height:178px;width:82px;justify-self:center;perspective:380px}
+.candleWick{position:absolute;left:50%;top:7%;height:86%;width:3px;transform:translateX(-50%);border-radius:99px;background:#d9d9d9;box-shadow:0 0 8px rgba(255,255,255,.45)}
+.candleBody{position:absolute;left:50%;width:39px;min-height:10px;transform:translateX(-50%) rotateY(-8deg);border:1px solid currentColor;border-radius:3px;box-shadow:inset -8px 0 12px rgba(0,0,0,.25),0 0 16px currentColor}
+.candleBody.bull{color:#3ee69a;background:linear-gradient(90deg,rgba(62,230,154,.9),rgba(15,115,73,.72))}
+.candleBody.bear{color:#ff5757;background:linear-gradient(90deg,rgba(255,87,87,.9),rgba(125,25,25,.75))}
+.ohlcLabel{position:absolute;display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.5px;color:#8d846e;white-space:nowrap}
+.ohlcLabel span{color:#f1c965;font-weight:800;text-shadow:0 0 7px rgba(241,201,101,.4)}
+.ohlcLabel b{color:#ddd3bc;font-size:11px}.ohlcLabel i{display:block;width:34px;height:1px;background:linear-gradient(90deg,rgba(241,201,101,.15),#e6bd59);box-shadow:0 0 5px rgba(230,189,89,.35)}
+.ohlcH{left:5%;top:10%}.ohlcO{left:5%;top:43%}.ohlcC{right:5%;top:43%}.ohlcL{right:5%;bottom:10%}
+@media(max-width:480px){.candleViz{height:200px;grid-template-columns:1fr 66px 1fr}.candleStage{height:160px;width:66px}.candleBody{width:32px}.ohlcLabel i{width:20px}.ohlcLabel{font-size:9px}.ohlcLabel b{font-size:10px}}
+
+/* v0.9.8x — per-market glow themes */
+:root{--market:#f2cb68;--market-rgb:242,203,104}
+body[data-market="XAUUSD"]{--market:#f2cb68;--market-rgb:242,203,104}
+body[data-market="US100"]{--market:#55c8ff;--market-rgb:85,200,255}
+body[data-market="BTCUSD"]{--market:#ff982f;--market-rgb:255,152,47}
+
+body[data-market] .hero,
+body[data-market] .card,
+body[data-market] .modalPanel,
+body[data-market] .sheet,
+body[data-market] .panel{
+ border-color:rgba(var(--market-rgb),.28)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.025),0 0 18px rgba(var(--market-rgb),.055),0 18px 55px rgba(0,0,0,.32)!important;
+}
+body[data-market] .marketTab.active,
+body[data-market] .lab,
+body[data-market] .calTitle,
+body[data-market] .notifyTab.active,
+body[data-market] .historyChevron{
+ color:var(--market)!important;
+ text-shadow:0 0 7px rgba(var(--market-rgb),.58),0 0 19px rgba(var(--market-rgb),.25)!important;
+}
+body[data-market] .marketTab.active:after,
+body[data-market] .notifyTab.active:after{
+ background:var(--market)!important;
+ box-shadow:0 0 8px rgba(var(--market-rgb),.95),0 0 20px rgba(var(--market-rgb),.52)!important;
+}
+body[data-market] .roundMenu,
+body[data-market] .circleClose,
+body[data-market] .calNav button,
+body[data-market] .settingsBtn{border-color:rgba(var(--market-rgb),.28)!important}
+body[data-market] .roundMenu svg,
+body[data-market] .settingsBtn svg{
+ stroke:var(--market)!important;
+ filter:drop-shadow(0 0 6px rgba(var(--market-rgb),.52))!important;
+}
+
+/* 0.9.8x visual refinement — white typography, market color only as accent */
+body[data-market] .lab,
+body[data-market] .brand,
+body[data-market] .priceLabel,
+body[data-market] .calTitle,
+body[data-market] .notifyTab.active,
+body[data-market] .marketTab.active,
+body[data-market] .updateItem b,
+body[data-market] .copyright strong,
+body[data-market] .historyChevron{
+ color:#fff!important;
+ text-shadow:0 0 7px rgba(255,255,255,.28)!important;
+}
+body[data-market] #price{
+ color:#fff!important;
+ -webkit-text-fill-color:#fff!important;
+ text-shadow:0 0 6px rgba(255,255,255,.42),0 0 15px rgba(255,255,255,.14)!important;
+ filter:none!important;
+}
+body[data-market] .val:not(.green):not(.red),
+body[data-market] .modalHead,
+body[data-market] .level b,
+body[data-market] .event b{
+ color:#f5f5f5!important;
+}
+body[data-market] .muted,
+body[data-market] .tag,
+body[data-market] .copyright,
+body[data-market] .updateItem span{
+ color:#8e8e8e!important;
+}
+body[data-market] .marketTab{color:#777!important}
+body[data-market] .marketTab.active{color:#fff!important}
+
+/* Keep selected market identity in borders, active lines and icon glow only */
+body[data-market] .marketTab.active:after,
+body[data-market] .notifyTab.active:after{
+ background:var(--market)!important;
+ box-shadow:0 0 8px rgba(var(--market-rgb),.95),0 0 20px rgba(var(--market-rgb),.52)!important;
+}
+body[data-market] .roundMenu svg,
+body[data-market] .settingsBtn svg{
+ stroke:#fff!important;
+ filter:drop-shadow(0 0 5px rgba(var(--market-rgb),.48))!important;
+}
+</style></head><body><main class="w">
 <header class="top"><div class="brand"><div class="au goldLogo" aria-label="Gold">
 <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
  <defs><linearGradient id="goldBar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0a6"/><stop offset=".38" stop-color="#d7aa36"/><stop offset="1" stop-color="#76500d"/></linearGradient></defs>
  <path d="M10 39 17 25h30l7 14-7 10H17Z" fill="url(#goldBar)" stroke="#f0d16b" stroke-width="1.4"/>
  <path d="M17 25 24 16h18l5 9M17 25h30M23 39l5-14M41 39l-5-14" fill="none" stroke="#6e4c0d" stroke-width="1.3" stroke-linejoin="round"/>
  <path d="M17 49h30" stroke="#f2d36d" stroke-width="1.2" opacity=".55"/>
-</svg></div><div><b>XAUX Beta 0.9.6x</b><div class="sub">M5 • IMBALANCE MONITOR</div></div></div><div class="on" id="online">● READY</div></header>
-<section class="hero"><div class="flex"><b style="font-size:12px">XAU/USD</b><span class="muted">M5</span></div><div class="price" id="price">—</div><div class="muted" id="stamp">กำลังเชื่อมต่อข้อมูลราคา…</div></section>
-<section class="grid"><div class="card"><div class="lab">IMBALANCE WATCHED</div><div class="val green" id="count">0 LEVELS</div></div><div class="card"><div class="lab">MODE</div><div class="val">IMBALANCE</div></div><div class="card full"><div class="lab">LAST CLOSED M5</div><div class="val" id="candle">—</div></div></section>
+</svg></div><div><b>XAUX Beta 0.9.8x</b><div class="sub">M5 • IMBALANCE MONITOR</div></div></div><div class="on" id="online">● READY</div></header>
+<div class="marketTabs"><button class="marketTab active" data-market="XAUUSD">● XAU/USD</button><button class="marketTab" data-market="US100">● US100</button><button class="marketTab" data-market="BTCUSD">● BTC/USD</button></div><section class="hero"><div class="flex"><b style="font-size:12px">XAU/USD</b><span class="muted">M5</span></div><div class="price" id="price">—</div><div class="muted" id="stamp">กำลังเชื่อมต่อข้อมูลราคา…</div></section>
+<section class="grid"><div class="card"><div class="lab">IMBALANCE WATCHED</div><div class="val green" id="count">0 LEVELS</div></div><div class="card"><div class="lab">MODE</div><div class="val">IMBALANCE</div></div><div class="card full candleCard">
+<div class="lab">LAST CLOSED M5</div>
+<div id="candle" class="candleViz">
+  <div class="ohlcLabel ohlcH"><span>H</span><b id="ohlcH">—</b><i></i></div>
+  <div class="ohlcLabel ohlcO"><span>O</span><b id="ohlcO">—</b><i></i></div>
+  <div class="candleStage">
+    <div id="candleWick" class="candleWick"></div>
+    <div id="candleBody" class="candleBody"></div>
+  </div>
+  <div class="ohlcLabel ohlcC"><i></i><span>C</span><b id="ohlcC">—</b></div>
+  <div class="ohlcLabel ohlcL"><i></i><span>L</span><b id="ohlcL">—</b></div>
+</div>
+</div></section>
 <button id="calendarOpen" class="roundMenu calendarBtn" type="button" aria-label="Alert calendar">
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v3M19 3v3M4 8h16M5 5h14a2 2 0 0 1 2 2v13H3V7a2 2 0 0 1 2-2Z"/><path d="M7 12h2M11 12h2M15 12h2M7 16h2M11 16h2M15 16h2"/></svg>
 </button>
@@ -86,8 +334,18 @@ body{background:radial-gradient(circle at 50% -15%,rgba(183,139,31,.075),transpa
 <div id="calGrid" class="calendarGrid"></div><div id="calSummary" class="calSummary">—</div>
 </div></div><div id="imbModal" class="modal" aria-hidden="true">
  <div class="modalPanel">
-  <div class="modalHead"><div><div class="lab">IMBALANCE OPEN LEVELS</div><div class="muted">AUTO DISCOVERED</div></div><button id="imbClose" class="circleClose" type="button">×</button></div>
-  <div class="levels" id="levels"><div class="muted">No Imbalance levels loaded yet.</div></div>
+  <div class="modalHead"><div><div class="lab">NOTIFICATIONS</div><div class="muted">LEVELS & UPDATE LOG</div></div><button id="imbClose" class="circleClose" type="button">×</button></div>
+  <div class="notifyTabs"><button class="notifyTab active" data-notify="levelsPanel">IMBALANCE</button><button class="notifyTab" data-notify="updatesPanel">UPDATES</button></div>
+  <div id="levelsPanel" class="notifyPanel active"><div class="levels" id="levels"><div class="muted">No Imbalance levels loaded yet.</div></div></div>
+  <div id="updatesPanel" class="notifyPanel">
+    <div class="updateItem"><b>v0.9.8x</b><span>Added per-market UI themes and separate Rejection History views for XAU/USD, US100 and BTC/USD.</span></div>
+    <div class="updateItem"><b>v0.9.7x</b><span>Black glass UI, transparent market tabs, update log and copyright footer.</span></div>
+    <div class="updateItem"><b>v0.9.6x</b><span>Fixed UTC-4 and Thailand signal-time display.</span></div>
+    <div class="updateItem"><b>v0.9.5x</b><span>Discord alerts now use green for bullish and red for bearish retests.</span></div>
+    <div class="updateItem"><b>v0.9.4x</b><span>Added True Retest: price must move away first, then return to the Imbalance origin.</span></div>
+    <div class="updateItem"><b>v0.9.3x</b><span>Reduced unnecessary KV writes and improved Worker status recovery.</span></div>
+    <div class="updateItem"><b>v0.9.2x</b><span>Refined Imbalance monitoring, Discord embed layout and signal details.</span></div>
+  </div>
  </div>
 </div>
 <button id="settingsOpen" class="roundMenu settingsBtn" type="button" aria-label="Settings">
@@ -100,9 +358,9 @@ body{background:radial-gradient(circle at 50% -15%,rgba(183,139,31,.075),transpa
 <section class="card liveFeedCard" style="margin-top:10px">
 <div class="liveHead"><div><div class="lab">LIVE ALERTS</div><div class="muted">XAUX IMBALANCE FEED</div></div><div class="liveState"><span></span> LIVE</div></div>
 <div id="liveFeed" class="liveFeed"><div class="muted">Waiting for Imbalance alerts…</div></div>
-</section><section class="card historyCard" style="margin-top:10px">
-<button id="historyToggle" class="historyToggle" type="button" aria-expanded="true"><span class="lab">REJECTION HISTORY</span><span class="historyChevron">⌃</span></button>
-<div id="historyWrap" class="historyWrap"><div id="events"><div class="event"><b>Waiting</b><div>เจอจังหวะเมื่อไหร่ เดี๋ยวขึ้นให้ตรงนี้</div></div></div></div>
+</section><section class="card historyCard collapsed" style="margin-top:10px">
+<button id="historyToggle" class="historyToggle" type="button" aria-expanded="false"><span class="lab">REJECTION HISTORY</span><span class="historyChevron">⌃</span></button>
+<div id="historyWrap" class="historyWrap"><div id="events"><div class="event"><b>Waiting</b><div>กำลังหา Imbalance...</div></div></div></div>
 </section>
 </main><script>
 const $=x=>document.getElementById(x),K=['gap','tol','disp','worker','key'];let s=JSON.parse(localStorage.getItem('xauv4')||'{}');s.worker=s.worker||'https://fd10.janz170962.workers.dev/';s.key=s.key||'12345';K.forEach(k=>{if(s[k]!=null)$(k).value=s[k]});const base=()=>$('worker').value.trim().replace(/\/$/,'');
@@ -136,7 +394,7 @@ $('settingsClose').onclick=()=>closeModal('settingsModal');
 ['imbModal','settingsModal'].forEach(id=>$(id).addEventListener('click',e=>{if(e.target===$(id))closeModal(id)}));
 
 
-function render(d){if(d.price){$('price').textContent=Number(d.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});$('stamp').textContent='Updated '+new Date(d.updatedAt).toLocaleString('th-TH')}if(d.lastClosed)$('candle').textContent=`O ${d.lastClosed.open.toFixed(2)}  H ${d.lastClosed.high.toFixed(2)}  L ${d.lastClosed.low.toFixed(2)}  C ${d.lastClosed.close.toFixed(2)}`;let L=d.levels||[];$('count').textContent=L.length+' LEVEL'+(L.length===1?'':'S');$('levels').innerHTML=L.length?L.map(x=>`<div class="level"><div class="l"><span class="dot ${x.type==='BULL'?'bull':'bear'}"></span><div><b>${Number(x.level).toFixed(2)}</b><div class="tag">${x.type==='BULL'?'BULLISH / LOW':'BEARISH / HIGH'} • ${x.created}<br>DISP ${Number(x.displacementPct||0).toFixed(3)}%</div></div></div><span class="tag">IMB OPEN</span></div>`).join(''):'<div class="muted">No active IMB found.</div>';if(d.events?.length)$('events').innerHTML=d.events.map(e=>{const tm=xauxTimes(e.time);return `<div class="event"><b>${e.type==='BULL'?'🟢':'🔴'} ${e.type} REJECTION • ${Number(e.level).toFixed(2)}</b><div class="eventTime">UTC-4 ${tm.ref}<br>TH ${tm.th} • Close ${Number(e.close).toFixed(2)}</div></div>`}).join('')}
+function render(d){if(typeof activeMarket!=="undefined"&&activeMarket!=="XAUUSD")return;lastXauEvents=(d.events||[]).slice();if(d.price){$('price').textContent=Number(d.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});$('stamp').textContent='Updated '+new Date(d.updatedAt).toLocaleString('th-TH')}if(d.lastClosed){const k=d.lastClosed,o=+k.open,hi=+k.high,lo=+k.low,c=+k.close,r=Math.max(hi-lo,.00001),body=$('candleBody'),wick=$('candleWick');$('ohlcO').textContent=o.toFixed(2);$('ohlcH').textContent=hi.toFixed(2);$('ohlcL').textContent=lo.toFixed(2);$('ohlcC').textContent=c.toFixed(2);const top=((hi-Math.max(o,c))/r)*100,bot=((hi-Math.min(o,c))/r)*100;body.style.top=Math.max(7,top)+'%';body.style.height=Math.max(8,bot-top)+'%';body.classList.toggle('bull',c>=o);body.classList.toggle('bear',c<o);wick.style.background=c>=o?'#8affc6':'#ff8585';}let L=d.levels||[];$('count').textContent=L.length+' LEVEL'+(L.length===1?'':'S');$('levels').innerHTML=L.length?L.map(x=>`<div class="level"><div class="l"><span class="dot ${x.type==='BULL'?'bull':'bear'}"></span><div><b>${Number(x.level).toFixed(2)}</b><div class="tag">${x.type==='BULL'?'BULLISH / LOW':'BEARISH / HIGH'} • ${x.created}<br>DISP ${Number(x.displacementPct||0).toFixed(3)}%</div></div></div><span class="tag">IMB OPEN</span></div>`).join(''):'<div class="muted">No active IMB found.</div>';if(d.events?.length)$('events').innerHTML=d.events.map(e=>{const tm=xauxTimes(e.time);return `<div class="event"><b>${e.type==='BULL'?'🟢':'🔴'} ${e.type} REJECTION • ${Number(e.level).toFixed(2)}</b><div class="eventTime">UTC-4 ${tm.ref}<br>TH ${tm.th} • Close ${Number(e.close).toFixed(2)}</div></div>`}).join('')}
 
 
 
@@ -157,12 +415,39 @@ function renderLiveFeed(events){
  }).join('');
 }
 
-const historyToggle=$('historyToggle');if(historyToggle)historyToggle.onclick=()=>{const card=historyToggle.closest('.historyCard'),closed=card.classList.toggle('collapsed');historyToggle.setAttribute('aria-expanded',String(!closed));};
+const historyToggle=$('historyToggle');if(historyToggle){const card=historyToggle.closest('.historyCard');card.classList.add('collapsed');historyToggle.setAttribute('aria-expanded','false');historyToggle.onclick=()=>{const closed=card.classList.toggle('collapsed');historyToggle.setAttribute('aria-expanded',String(!closed));};}
 async function poll(){if(!base())return;try{let r=await fetch(base()+'/status');if(r.ok){render(await r.json());$('online').textContent='● ONLINE'}}catch{$('online').textContent='● OFFLINE'}}
 $('save').onclick=async()=>{let x={};K.forEach(k=>x[k]=$(k).value);localStorage.setItem('xauv4',JSON.stringify(x));try{let r=await fetch(base()+'/config',{method:'POST',headers:{'content-type':'application/json','x-admin-key':x.key},body:JSON.stringify({enabled:true,minGap:+x.gap,tolerance:+x.tol,maxLevels:20,minDisplacementPct:+x.disp})});alert(r.ok?'Imbalance monitor armed ✓':'Save failed: '+await r.text())}catch{alert('Worker connection failed')}};
 
-poll();setInterval(poll,10000);
-</script></body></html>
+document.body.dataset.market="XAUUSD";poll();setInterval(poll,10000);
+let activeMarket="XAUUSD";
+const marketHistory={XAUUSD:[],US100:[],BTCUSD:[]};
+let lastXauEvents=[];
+function renderMarketHistory(m){
+ const box=$("events"); if(!box)return;
+ const ev=m==="XAUUSD"?lastXauEvents:(marketHistory[m]||[]);
+ if(!ev.length){box.innerHTML='<div class="empty">NO REJECTION HISTORY FOR '+({XAUUSD:"XAU/USD",US100:"US100",BTCUSD:"BTC/USD"}[m])+'</div>';return}
+ box.innerHTML=ev.map(e=>`<div class="event"><div><b>${e.type||"—"} REJECTION</b><div class="tag">${e.time||"—"}</div></div><div class="right"><b>${Number(e.level||e.price||0).toFixed(2)}</b></div></div>`).join("");
+}
+function setMarketView(m){
+ activeMarket=m;
+ document.body.dataset.market=m;
+ document.querySelectorAll(".marketTab").forEach(x=>x.classList.toggle("active",x.dataset.market===m));
+ const xau=m==="XAUUSD";
+ const names={XAUUSD:"XAU/USD",US100:"US100",BTCUSD:"BTC/USD"};
+ const hero=document.querySelector(".hero .flex b"); if(hero)hero.textContent=names[m];
+ renderMarketHistory(m);
+ if(!xau){
+   $("price").textContent="—";
+   $("stamp").textContent="Detector not enabled";
+   $("count").textContent="0 LEVELS";
+   ["ohlcO","ohlcH","ohlcL","ohlcC"].forEach(id=>{const e=$(id);if(e)e.textContent="—"});
+   const body=$("candleBody"); if(body){body.style.height="8%";body.style.top="46%";body.classList.remove("bull","bear")}
+   const wick=$("candleWick"); if(wick)wick.style.background="#777";
+   const levels=$("levels");if(levels)levels.innerHTML='<div class="muted">Detector for '+names[m]+' is not enabled yet.</div>';
+ }else poll();
+}
+document.querySelectorAll(".marketTab").forEach(b=>b.addEventListener("click",()=>setMarketView(b.dataset.market)));document.querySelectorAll(".notifyTab").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".notifyTab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".notifyPanel").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.getElementById(b.dataset.notify).classList.add("active")}));</script><footer class="copyright">© 2026 <strong>munz</strong>. All rights reserved.</footer><div id="marketToast" class="marketToast"></div></body></html>
 <style>
 #price{
  display:block!important;
