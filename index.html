@@ -292,6 +292,9 @@ body[data-market] .settingsBtn svg{
 .mvUp{color:#35d98a}.mvDown{color:#ff5b67}.mvSide{color:#8b8b8b}
 @media(max-width:420px){.mvGrid{gap:4px}.mvCell{padding:8px 1px}.mvTrend{font-size:8px}}
 
+
+/* XAUX Chart Review */
+.reviewCard{margin-top:10px;overflow:hidden}.reviewDrop{position:relative;border:1px dashed rgba(201,160,55,.34);border-radius:16px;background:#040403;padding:18px 14px;text-align:center;transition:.2s}.reviewDrop.hasImage{border-style:solid}.reviewDrop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.reviewIcon{width:38px;height:38px;margin:0 auto 9px;color:#d9b84e}.reviewIcon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.reviewTitle{font-size:13px;font-weight:900;color:#f3df9b}.reviewHint{font-size:10px;color:var(--muted);margin-top:5px;line-height:1.5}.reviewPreview{display:none;width:100%;max-height:260px;object-fit:contain;border-radius:13px;margin-top:12px;background:#000}.reviewDrop.hasImage .reviewPreview{display:block}.reviewActions{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}.reviewBtn{border:0;border-radius:13px;padding:13px 15px;font-weight:900;background:linear-gradient(135deg,#8b6814,#e2c15a);color:#090704}.reviewBtn:disabled{opacity:.45}.reviewClear{border:1px solid rgba(201,160,55,.22);border-radius:13px;padding:0 14px;background:#050504;color:#bca45f}.reviewStatus{display:none;margin-top:10px;padding:11px;border-radius:12px;background:#050504;border:1px solid rgba(201,160,55,.14);font-size:11px;color:var(--muted);line-height:1.55}.reviewStatus.show{display:block}.reviewResult{display:none;margin-top:10px}.reviewResult.show{display:block}.reviewResult pre{white-space:pre-wrap;margin:0;padding:13px;border-radius:13px;background:#040403;border:1px solid rgba(201,160,55,.14);color:#d9c985;font:11px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace}.reviewPill{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:900;letter-spacing:.08em;color:#d9b84e;border:1px solid rgba(201,160,55,.2);border-radius:999px;padding:6px 8px;margin-bottom:10px}
 </style></head><body><main class="w">
 <header class="top"><div class="brand"><div class="au goldLogo" aria-label="Gold">
 <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
@@ -353,6 +356,20 @@ body[data-market] .settingsBtn svg{
   <div class="mvCell"><div class="mvTf">M15</div><div id="mvM15" class="mvTrend mvSide">—</div></div>
   <div class="mvCell"><div class="mvTf">M5</div><div id="mvM5" class="mvTrend mvSide">—</div></div>
  </div>
+</section>
+
+<section class="card reviewCard">
+ <div class="liveHead"><div><div class="lab">AI CHART REVIEW</div><div class="muted">UPLOAD SCREENSHOT • XAUX RULESET</div></div><div class="reviewPill">VISION</div></div>
+ <div id="reviewDrop" class="reviewDrop">
+  <input id="reviewFile" type="file" accept="image/png,image/jpeg,image/webp" aria-label="Upload chart screenshot">
+  <div class="reviewIcon"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg></div>
+  <div class="reviewTitle">แตะเพื่อเลือกรูปกราฟ</div>
+  <div class="reviewHint">PNG / JPG / WEBP • วิเคราะห์ First IMB, Retest, Rejection และบริบท MULTIVERSE</div>
+  <img id="reviewPreview" class="reviewPreview" alt="Chart preview">
+ </div>
+ <div class="reviewActions"><button id="reviewSend" class="reviewBtn" type="button" disabled>ANALYZE & SEND DISCORD</button><button id="reviewClear" class="reviewClear" type="button">CLEAR</button></div>
+ <div id="reviewStatus" class="reviewStatus"></div>
+ <div id="reviewResult" class="reviewResult"><pre id="reviewText"></pre></div>
 </section>
 
 <section class="card liveFeedCard" style="margin-top:10px">
@@ -437,6 +454,16 @@ function renderLiveFeed(events){
 const historyToggle=$('historyToggle');if(historyToggle){const card=historyToggle.closest('.historyCard');card.classList.add('collapsed');historyToggle.setAttribute('aria-expanded','false');historyToggle.onclick=()=>{const closed=card.classList.toggle('collapsed');historyToggle.setAttribute('aria-expanded',String(!closed));};}
 async function poll(){if(!base())return;try{let r=await fetch(base()+'/status');if(r.ok){const d=await r.json();render(d);$('online').textContent=d.marketClosed?'● MARKET CLOSED':(d.online?'● ONLINE':'● WAITING')}}catch{$('online').textContent='● OFFLINE'}}
 $('save').onclick=async()=>{let x={};K.forEach(k=>x[k]=$(k).value);localStorage.setItem('xauv4',JSON.stringify(x));try{let r=await fetch(base()+'/config',{method:'POST',headers:{'content-type':'application/json','x-admin-key':x.key},body:JSON.stringify({enabled:true,minGap:+x.gap,tolerance:+x.tol,maxLevels:20,minDisplacementPct:+x.disp})});alert(r.ok?'Imbalance monitor armed ✓':'Save failed: '+await r.text())}catch{alert('Worker connection failed')}};
+
+
+// XAUX AI Chart Review
+let reviewSelectedFile=null;
+const reviewFile=$('reviewFile'),reviewDrop=$('reviewDrop'),reviewPreview=$('reviewPreview'),reviewSend=$('reviewSend'),reviewStatus=$('reviewStatus'),reviewResult=$('reviewResult'),reviewText=$('reviewText');
+function setReviewStatus(msg){reviewStatus.textContent=msg;reviewStatus.classList.toggle('show',!!msg)}
+function clearReview(){reviewSelectedFile=null;reviewFile.value='';reviewPreview.removeAttribute('src');reviewDrop.classList.remove('hasImage');reviewSend.disabled=true;reviewResult.classList.remove('show');reviewText.textContent='';setReviewStatus('')}
+reviewFile.addEventListener('change',()=>{const f=reviewFile.files?.[0];if(!f)return clearReview();if(!/^image\/(png|jpeg|webp)$/.test(f.type)){alert('รองรับ PNG, JPG และ WEBP เท่านั้น');return clearReview()}if(f.size>6*1024*1024){alert('รูปต้องไม่เกิน 6 MB');return clearReview()}reviewSelectedFile=f;reviewPreview.src=URL.createObjectURL(f);reviewDrop.classList.add('hasImage');reviewSend.disabled=false;reviewResult.classList.remove('show');setReviewStatus('พร้อมวิเคราะห์ • '+(f.size/1024/1024).toFixed(2)+' MB')});
+$('reviewClear').onclick=clearReview;
+reviewSend.onclick=async()=>{if(!reviewSelectedFile||!base())return;reviewSend.disabled=true;reviewSend.textContent='ANALYZING...';setReviewStatus('กำลังส่งภาพไปวิเคราะห์ตาม XAUX ruleset…');reviewResult.classList.remove('show');try{const fd=new FormData();fd.append('image',reviewSelectedFile,reviewSelectedFile.name||'chart.jpg');const r=await fetch(base()+'/review',{method:'POST',headers:{'x-admin-key':$('key').value},body:fd});const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.error||('HTTP '+r.status));reviewText.textContent=d.review||'วิเคราะห์สำเร็จและส่ง Discord แล้ว';reviewResult.classList.add('show');setReviewStatus(d.discordSent===false?'วิเคราะห์สำเร็จ • แต่ส่ง Discord ไม่สำเร็จ':'วิเคราะห์สำเร็จ • ส่งเข้า Discord แล้ว ✓')}catch(e){setReviewStatus('วิเคราะห์ไม่สำเร็จ: '+e.message)}finally{reviewSend.disabled=!reviewSelectedFile;reviewSend.textContent='ANALYZE & SEND DISCORD'}};
 
 poll();setInterval(poll,10000);
 let lastXauEvents=[];
